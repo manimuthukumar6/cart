@@ -9,14 +9,14 @@
   @include outer-container;
   .product-list {
     @include bp(large) {
-      @include span-columns(7);
+      @include span-columns(8);
     }
   }
   .cart {
     padding: $half-spacing-unit;
-    border: 1px solid $gray;
+    border: 1px solid $silver;
     @include bp(large) {
-      @include span-columns(5);
+      @include span-columns(4);
     }
   }
 }

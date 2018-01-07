@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import CartProduct from '../CartProduct/CartProduct';
+import Button from '../../../shared/abof-react-components/Button/Button';
 
 if (process.env.ABOF_IS_BROWSER) {
   require('./Cart.scss');
@@ -45,12 +46,13 @@ const Cart = ({ products, total, onCheckoutClicked, onRemoveItem }) => {
         </div>
       }
       {nodes}
-      <button
-        onClick={onCheckoutClicked}
+      <Button
+        type="primary"
+        title="Checkout"
+        element="button"
         disabled={hasProducts ? '' : 'disabled'}
-      >
-        Checkout
-      </button>
+        onClick={onCheckoutClicked}
+      />
     </div>
   );
 };

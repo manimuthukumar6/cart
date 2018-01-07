@@ -1,0 +1,243 @@
+// settings
+@import '../common/scss/settings.core';
+
+// tools
+@import '../common/scss/tools.core';
+
+.button {
+  @include antialiased;
+  position: relative;
+  display: inline-block;
+  padding: $half-spacing-unit $base-spacing-unit * 1.5;
+  margin-bottom: 0; // For input.btn
+
+
+  font-weight: normal;
+  line-height: $base-spacing-unit;
+  color: $white;
+
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: $button--color-secondary;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  transition: transform $base-transition-in-duration $base-transition-in-function, box-shadow $base-transition-in-duration $base-transition-in-function;
+  user-select: select;
+  touch-action: manipulation;
+  border-radius: $base-border-radius;
+  text-transform: uppercase;
+
+  border: 0;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $button--color-secondary-hover;
+    text-decoration: none;
+  }
+
+  &:active {
+    color: $white;
+    background-color: $button--color-secondary-active;
+    text-decoration: none;
+  }
+}
+
+.button__loader {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button__loader-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.button__icon {
+  margin-right: $qtr-spacing-unit;
+  margin-left: -1 * $qtr-spacing-unit;
+}
+
+.button__icon--right {
+  margin-right: -1 * $qtr-spacing-unit;
+  margin-left: $half-spacing-unit;
+}
+
+// .button--text-align-center {}
+
+.button--text-align-left {
+  text-align: left;
+}
+
+.button--text-align-right {
+  text-align: right;
+}
+
+.button--tiny {
+  padding-right: $half-spacing-unit;
+  padding-left: $half-spacing-unit;
+  font-size: modular-scale(-2);
+  line-height: $half-spacing-unit;
+}
+
+.button--small {
+  /* font-size: modular-scale(-1);
+  line-height: 1.5 * $base-spacing-unit; */
+}
+
+.button--large {
+  font-size: modular-scale(1);
+  line-height: 1.5 * $base-spacing-unit;
+}
+
+.button--full-width {
+  width: 100%;
+  @include bp(large) {
+    width: auto;
+  }
+}
+
+.button--animated {
+  &:hover,
+  &:focus {
+    transform: translate3d(-6px, -6px, 0);
+    box-shadow: 6px 6px $base-shadow-color;
+  }
+
+  &:active {
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 0 $base-shadow-color;
+  }
+}
+
+.button--primary {
+  background-color: $button--color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: $button--color-primary-hover;
+  }
+
+  &:active {
+    background-color: $button--color-primary-active;
+  }
+}
+
+// .button--secondary {}
+
+.button--tertiary {
+  color: $color-gray-base;
+  background-color: $button--color-tertiary;
+  border: $base-border;
+  border-color: $color-gray;
+  line-height: $qtr-spacing-unit;
+
+  &:hover,
+  &:focus {
+    color: $color-gray-base;
+    background-color: $button--color-tertiary-hover;
+  }
+
+  &:active {
+    color: $color-gray-base;
+    background-color: $button--color-tertiary-active;
+  }
+}
+
+.button--facebook {
+  background-color: $button--color-facebook;
+
+  &:hover,
+  &:focus {
+    background-color: $button--color-facebook-hover;
+  }
+
+  &:active {
+    background-color: $button--color-facebook-active;
+  }
+
+  &.button--disabled {
+    background-color: $color-gray-base;
+  }
+}
+
+.button--google {
+  background-color: $button--color-google;
+
+  &:hover,
+  &:focus {
+    background-color: $button--color-google-hover;
+  }
+
+  &:active {
+    background-color: $button--color-google-active;
+  }
+
+  &.button--disabled {
+    background-color: $color-gray-base;
+  }
+}
+
+.button--social {
+  padding: $half-spacing-unit;
+  font-size: modular-scale(-1);
+  color: $color-gray-base;
+  background-color: $white;
+  border: $base-border;
+  border-color: $color-gray-light;
+
+  &:hover,
+  &:focus {
+    color: $color-gray-base;
+    background-color: $white;
+  }
+
+  &:active {
+    color: $color-gray-base;
+    background-color: $white;
+  }
+
+  /* &.button--disabled {
+    color: $white;
+    background-color: $color-gray-base;
+  } */
+
+  .button__title {
+    position: relative;
+    top: $qtr-spacing-unit / 2;
+  }
+}
+
+.button--email {
+  color: $black;
+  background-color: $white;
+  border: 1px solid $black;
+
+  &:hover,
+  &:focus {
+    color: $black;
+    background-color: $white;
+  }
+
+  &:active {
+    color: $black;
+    background-color: $white;
+  }
+}
+
+.button--waiting {
+  .button__icon,
+  .button__title {
+    visibility: hidden;
+  }
+}
+
+.button--disabled {
+  pointer-events: none;
+  opacity: .6;
+}

@@ -1,0 +1,70 @@
+// settings
+@import '../common/scss/settings.core';
+
+// tools
+@import '../common/scss/tools.core';
+
+.svg-icon {
+  display: inline-block;
+
+  width: $svg-icon--size;
+  height: $svg-icon--size;
+
+  color: inherit;
+  fill: currentColor;
+}
+
+.svg-icon--tiny {
+  width: $svg-icon--size-tiny;
+  height: $svg-icon--size-tiny;
+}
+
+.svg-icon--small {
+  width: $svg-icon--size-small;
+  height: $svg-icon--size-small;
+}
+
+.svg-icon--large {
+  width: $svg-icon--size-large;
+  height: $svg-icon--size-large;
+}
+
+.svg-icon--xlarge {
+  width: $svg-icon--size-xlarge;
+  height: $svg-icon--size-xlarge;
+}
+
+.svg-icon--xxlarge {
+  width: $svg-icon--size-xxlarge;
+  height: $svg-icon--size-xxlarge;
+}
+
+.svg-icon--responsive {
+  width: $svg-icon--size-small;
+  height: $svg-icon--size-small;
+
+  @include bp(large) {
+    width: $svg-icon--size;
+    height: $svg-icon--size;
+  }
+}
+
+.svg-icon--reverse-responsive {
+  width: $svg-icon--size;
+  height: $svg-icon--size;
+
+  @include bp(large) {
+    width: $svg-icon--size-small;
+    height: $svg-icon--size-small;
+  }
+}
+
+.svg-icon--reverse-responsive-small {
+  width: $svg-icon--size-small;
+  height: $svg-icon--size-small;
+
+  @include bp(large) {
+    width: $svg-icon--size-tiny;
+    height: $svg-icon--size-tiny;
+  }
+}

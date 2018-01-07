@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Button from '../../../shared/abof-react-components/Button/Button';
 
 const CartProduct = ({ price, quantity, title, onRemoveItem }) => (
   <div className="cart-summary">
@@ -7,11 +8,12 @@ const CartProduct = ({ price, quantity, title, onRemoveItem }) => (
     <div className="cart-item-total">{price * quantity}</div>
     <div className="cart-action">
       {onRemoveItem &&
-        <button
+        <Button
+          title="Remove"
+          element="button"
           onClick={onRemoveItem}
-        >
-          Remove
-        </button>
+          size="tiny"
+        />
       }
     </div>
   </div>

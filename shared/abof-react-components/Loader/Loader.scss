@@ -1,0 +1,55 @@
+// settings
+@import '../common/scss/settings.core';
+
+// tools
+@import '../common/scss/tools.core';
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.loader {
+  display: inline-block;
+}
+
+.loader__svg {
+  width: $loader--size-medium;
+  height: $loader--size-medium;
+
+  color: $color-brand-primary;
+  animation: loader-spin ($base-transition-in-duration * 2) infinite linear;
+  stroke: currentColor;
+}
+
+.loader--tiny {
+  .loader__svg {
+    width: $loader--size-tiny;
+    height: $loader--size-tiny;
+  }
+}
+
+.loader--small {
+  .loader__svg {
+    width: $loader--size-small;
+    height: $loader--size-small;
+  }
+}
+
+.loader--large {
+  .loader__svg {
+    width: $loader--size-large;
+    height: $loader--size-large;
+  }
+}
+
+.loader--light {
+  .loader__svg {
+    stroke: $white;
+  }
+}

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import Prices from '../../../shared/abof-react-components/Prices/Prices';
+import Button from '../../../shared/abof-react-components/Button/Button';
 if (process.env.ABOF_IS_BROWSER) {
   require('./ProductItem.scss');
 }
@@ -31,16 +32,31 @@ const ProductItem = ({ product, cartProduct, onAddToCartClicked, onRemoveItemCli
         </div>
         {cartProduct ?
           <div className="product-item__actions">
-            <button onClick={onRemoveItemClicked}>-</button>
-            <span>{cartProduct.quantity} in cart</span>
-            <button onClick={onAddToCartClicked} disabled={product.inventory > 0 ? '' : 'disabled'}>+</button>
+            <Button
+              title="-"
+              type="tertiary"
+              element="button"
+              onClick={onRemoveItemClicked}
+              size="tiny"
+            />
+            <span className="product-item__text">{cartProduct.quantity} in cart</span>
+            <Button
+              title="+"
+              type="tertiary"
+              element="button"
+              disabled={product.inventory > 0 ? false : 'disabled'}
+              onClick={onAddToCartClicked}
+              size="tiny"
+            />
           </div> :
-          <button
+          <Button
+            type="primary"
+            title={product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+            element="button"
+            disabled={product.inventory > 0 ? false : 'disabled'}
             onClick={onAddToCartClicked}
-            disabled={product.inventory > 0 ? '' : 'disabled'}
-          >
-            {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-          </button>
+            size="tiny"
+          />
         }
       </div>
     </div>
